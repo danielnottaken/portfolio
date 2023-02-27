@@ -1,21 +1,40 @@
-import { Badge, Container } from "./Components";
-import { AboutMe } from "./Sections";
+import styled from "styled-components";
+import { Badge, Container, Margin } from "./Components";
+import { AboutMe, Bio } from "./Sections";
 import colors from "./utils/colors";
 
 function App() {
     return (
-        <>
-            <Badge
-                label="React"
-                borderColor={colors.accent1}
-                backgroundColor={colors.accent1}
-                percentage={75}
-            />
-            <Container backgroundColor={colors.secundary}>
-                <AboutMe />
-            </Container>
-        </>
+        <Background $color={colors.background}>
+            <Wrapper>
+                <Row>
+                    <Container backgroundColor={colors.secundary}>
+                        <Bio />
+                    </Container>
+                    <Margin mr={20} />
+                    <Container backgroundColor={colors.secundary}>
+                        <AboutMe />
+                    </Container>
+                </Row>
+            </Wrapper>
+        </Background>
     );
 }
+
+const Background = styled.div`
+    width: 100vw;
+    height: 100vh;
+    background-color: ${({ $color }) => $color};
+`;
+
+const Wrapper = styled.div`
+    padding: 40px;
+`;
+
+const Row = styled.div`
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+`;
 
 export default App;
