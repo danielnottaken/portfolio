@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Margin, SectionTitle, Text } from "../../Components";
+import { EmailCopy, Margin, SectionTitle, Text } from "../../Components";
 import colors from "../../utils/colors";
 
 export default function Bio({}) {
@@ -8,6 +8,7 @@ export default function Bio({}) {
                 <ProfilePicture src="/images/pfp.jpg" alt="Profile Picture" />
                 <Text size={64} weigth={700} color={colors.white} noWrap>{content.name}</Text>
                 <Text size={48} weigth={700} color={colors.primary} noWrap>{content.job}</Text>
+                <EmailCopy email={content.email} />
         </Wrapper>
     );
 }
