@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { Badge, Container, Margin } from "./Components";
-import { AboutMe, Bio, Education, WorkExperience } from "./Sections";
+import { AboutMe, Bio, Education, Skills, WorkExperience } from "./Sections";
 import colors from "./utils/colors";
 
 function App() {
@@ -16,6 +16,7 @@ function App() {
                         <AboutMe />
                         <Education />
                         <WorkExperience />
+                        <Skills />
                     </Container>
                 </Row>
             </Wrapper>

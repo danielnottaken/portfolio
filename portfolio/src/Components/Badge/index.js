@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import Text from "../Text";
 
@@ -8,18 +9,30 @@ export default function Badge({
     backgroundColor,
     percentage = undefined,
 }) {
+    const [componentWidth, setComponentWidth] = useState(0);
+    const componentRef = useRef(null);
+
+    useEffect(() => {
+        if (componentRef.current) {
+            setComponentWidth(componentRef.current.offsetWidth);
+        }
+    }, []);
+
     return (
         <Container
+            ref={componentRef}
             $borderColor={borderColor}
             $backgroundColor={!percentage && backgroundColor}
         >
             {!!percentage && (
                 <PercentageBar
-                    $percentage={percentage}
+                    $percentageWidth={(percentage / 100) * componentWidth}
                     $backgroundColor={backgroundColor}
                 />
             )}
-            <Text size={14} weight={400} color={textColor}>{label}</Text>
+            <FrontText size={14} weight={400} color={textColor}>
+                {label}
+            </FrontText>
         </Container>
     );
 }
@@ -31,20 +44,24 @@ const Container = styled.div`
     justify-content: center;
     align-items: center;
     border-radius: 5px;
-    width: 100px;
+    min-width: 100px;
     height: 24px;
+    padding: 0px 8px;
 
     border: 1px ${({ $borderColor }) => $borderColor} solid;
     background-color: ${({ $backgroundColor }) => $backgroundColor};
 `;
 
 const PercentageBar = styled.div`
-    z-index: -1;
     position: absolute;
-    border-radius: 5px;
-    left: 1px;
-    top: 1px;
-    width: ${({ $percentage }) => ($percentage / 102) * 100}px;
-    height: 22px;
+    border-radius: 3px;
+    left: 2px;
+    top: 2px;
+    width: ${({ $percentageWidth }) => $percentageWidth}px;
+    height: 20px;
     background-color: ${({ $backgroundColor }) => $backgroundColor};
+`;
+
+const FrontText = styled(Text)`
+    z-index: 1;
 `;
