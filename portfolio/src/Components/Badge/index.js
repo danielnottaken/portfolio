@@ -19,7 +19,7 @@ export default function Badge({
                     $backgroundColor={backgroundColor}
                 />
             )}
-            <Text>{label}</Text>
+            <Text size={14} weight={400} color={textColor}>{label}</Text>
         </Container>
     );
 }

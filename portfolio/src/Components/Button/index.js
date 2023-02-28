@@ -14,9 +14,6 @@ export default function Button({ children, ...props }) {
         const y = event.clientY - button.offsetTop;
         const xPercent = (x / buttonWidth) * 100;
         const yPercent = (y / buttonHeight) * 100;
-        setGradient(
-            `radial-gradient(circle at ${xPercent}% ${yPercent}%, ${colors.accent3}, ${colors.secundary})`
-        );
         setHoverGradient(
             `radial-gradient(circle at ${xPercent}% ${yPercent}%, ${colors.white}, ${colors.secundary})`
         );
