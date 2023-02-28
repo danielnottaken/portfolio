@@ -4,6 +4,8 @@ import Text from "./Text";
 import Container from "./Container";
 import Margin from "./Margin";
 import EmailCopy from "./EmailCopy";
+import SectionItem from "./SectionItem";
+import Button from "./Button";
 
 export {
     Badge,
@@ -11,5 +13,7 @@ export {
     Text,
     Container,
     Margin,
-    EmailCopy
+    EmailCopy,
+    SectionItem,
+    Button
 }
