@@ -1,3 +1,4 @@
+import { useState } from "react";
 import styled from "styled-components";
 import { SvgArrowRight } from "../../Svg";
 import colors from "../../utils/colors";
@@ -5,7 +6,9 @@ import Button from "../Button";
 import Margin from "../Margin";
 import Text from "../Text";
 
-export default function SectionItem({ location, title, Date, Body, color }) {
+export default function SectionItem({ location, title, Date, Body, HiddenBody, color }) {
+    const [bodyIsHidden, setBodyIsHidden] = useState(true);
+
     return (
         <Wrapper>
             <SvgArrowRight fill={color} />
@@ -20,14 +23,16 @@ export default function SectionItem({ location, title, Date, Body, color }) {
                 <Text size={36} weight={600} color={color}>
                     {title}
                 </Text>
+                {!bodyIsHidden && <HiddenBody />}
                 <Button
                     $borderColor={color}
                     $backgroundColor="transparent"
                     $height={24}
                     $width={100}
+                    onClick={() => setBodyIsHidden(!bodyIsHidden)}
                 >
                     <Text size={14} weight={400} color={color}>
-                        Read more
+                        {!bodyIsHidden ? "Show less" : "Read more"}
                     </Text>
                 </Button>
                 <Body />

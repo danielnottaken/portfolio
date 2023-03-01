@@ -18,7 +18,7 @@ export default function Button({ children, ...props }) {
             `radial-gradient(circle at ${xPercent}% ${yPercent}%, ${colors.white}, ${colors.secundary})`
         );
     }
-    console.log(gradient);
+
     return (
         <CustonButton
             gradient={gradient}
