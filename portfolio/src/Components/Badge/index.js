@@ -60,6 +60,7 @@ const PercentageBar = styled.div`
     width: ${({ $percentageWidth }) => $percentageWidth}px;
     height: 20px;
     background-color: ${({ $backgroundColor }) => $backgroundColor};
+    transition: width 2s ease-in-out;
 `;
 
 const FrontText = styled(Text)`

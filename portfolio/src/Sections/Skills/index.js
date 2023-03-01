@@ -129,7 +129,7 @@ const content = {
             },
             {
                 label: "Leadership",
-                percentage: 35,
+                percentage: 45,
             },
             {
                 label: "Emotional intelligence",
