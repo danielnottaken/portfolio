@@ -39,7 +39,10 @@ const DateText = ({ text, color }) => (
 );
 const HiddenBodyText = ({ text, color }) => (
     <Text size={18} weight={300} color={color}>
-        {text}
+        <Text size={18} weight={400} color={colors.accent2}>
+            {text.slice(0, text.indexOf(" ", 15) + 1)}
+        </Text>
+        {text.slice(text.indexOf(" ", 15) + 1)}
     </Text>
 );
 
