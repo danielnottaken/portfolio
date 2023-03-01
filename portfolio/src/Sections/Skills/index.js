@@ -16,6 +16,7 @@ export default function Skills({}) {
             <Text size={36} weight={600} color={colors.white}>
                 {content.main.title}
             </Text>
+            <Margin mb={12} />
             <BadgeWrapper>
                 {content.main.items.map((item, index) => (
                     <Badge
@@ -28,9 +29,11 @@ export default function Skills({}) {
                     />
                 ))}
             </BadgeWrapper>
+            <Margin mb={20} />
             <Text size={36} weight={600} color={colors.white}>
                 {content.soft.title}
             </Text>
+            <Margin mb={12} />
             <BadgeWrapper>
                 {content.soft.items.map((item, index) => (
                     <Badge
@@ -43,14 +46,20 @@ export default function Skills({}) {
                     />
                 ))}
             </BadgeWrapper>
+            <Margin mb={20} />
             <Text size={36} weight={600} color={colors.white}>
                 {content.language.title}
             </Text>
+            <Margin mb={12} />
             {content.language.items.map((item, index) => (
                 <Row key={index}>
-                    <Text size={16} weight={600} color={colors.accent1}>{`${item.name}:`}</Text>
-                    <Margin mr={4} />
-                    <Text size={16} weight={600} color={colors.white}>{item.proficiency}</Text>
+                    <Text size={16} weight={600} color={colors.accent1}>
+                        {`${item.name}: `}
+                        <Text size={16} weight={600} color={colors.white}>
+                            {item.proficiency}
+                        </Text>
+                    </Text>
+                    <Margin mb={8} />
                 </Row>
             ))}
         </Wrapper>
@@ -58,10 +67,7 @@ export default function Skills({}) {
 }
 const Wrapper = styled.div``;
 
-const Row = styled.div`
-    display: flex;
-    fle-flow: row;
-`;
+const Row = styled.div``;
 
 const content = {
     title: "Skills",

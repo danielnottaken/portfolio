@@ -33,7 +33,7 @@ export default function SectionItem({
                 {!bodyIsHidden && !!HiddenBody && (
                     <>
                         <HiddenBody />
-                        <Margin mb={8} />{" "}
+                        <Margin mb={8} />
                     </>
                 )}
                 <Body />
