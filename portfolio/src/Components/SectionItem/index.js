@@ -6,7 +6,14 @@ import Button from "../Button";
 import Margin from "../Margin";
 import Text from "../Text";
 
-export default function SectionItem({ location, title, Date, Body, HiddenBody, color }) {
+export default function SectionItem({
+    location,
+    title,
+    Date,
+    Body,
+    HiddenBody,
+    color,
+}) {
     const [bodyIsHidden, setBodyIsHidden] = useState(true);
 
     return (
@@ -23,19 +30,25 @@ export default function SectionItem({ location, title, Date, Body, HiddenBody, c
                 <Text size={36} weight={600} color={color}>
                     {title}
                 </Text>
-                {!bodyIsHidden && <HiddenBody />}
+                {!bodyIsHidden && !!HiddenBody && (
+                    <>
+                        <HiddenBody />
+                        <Margin mb={8} />{" "}
+                    </>
+                )}
+                <Body />
+                <Margin mb={8} />
                 <Button
                     $borderColor={color}
-                    $backgroundColor="transparent"
+                    $backgroundColor={color}
                     $height={24}
                     $width={100}
                     onClick={() => setBodyIsHidden(!bodyIsHidden)}
                 >
-                    <Text size={14} weight={400} color={color}>
+                    <Text size={14} weight={400} color={colors.secundary}>
                         {!bodyIsHidden ? "Show less" : "Read more"}
                     </Text>
                 </Button>
-                <Body />
             </TextBody>
         </Wrapper>
     );

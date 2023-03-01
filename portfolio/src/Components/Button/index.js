@@ -21,13 +21,6 @@ export default function Button({ children, ...props }) {
 
     return (
         <CustonButton
-            gradient={gradient}
-            hoverGradient={hoverGradient}
-            onMouseMove={handleMouseMove}
-            onMouseLeave={() => {
-                setGradient("transparent");
-                setHoverGradient("");
-            }}
             {...props}
         >
             {children}
@@ -37,11 +30,7 @@ export default function Button({ children, ...props }) {
 
 const CustonButton = styled.button`
     border: 1px ${({ $borderColor }) => $borderColor} solid;
-    background: ${({ gradient }) => gradient};
-    transition: background 0.3s ease-in-out;
-    &:hover {
-        background: ${({ hoverGradient }) => hoverGradient};
-    }
+    background: ${({ $backgroundColor }) => $backgroundColor};
     border-radius: 5px;
     height: ${({ $height }) => $height}px;
     width: ${({ $width }) => $width}px;
