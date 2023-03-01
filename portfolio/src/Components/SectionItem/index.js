@@ -38,17 +38,19 @@ export default function SectionItem({
                 )}
                 <Body />
                 <Margin mb={8} />
-                <Button
-                    $borderColor={color}
-                    $backgroundColor={color}
-                    $height={24}
-                    $width={100}
-                    onClick={() => setBodyIsHidden(!bodyIsHidden)}
-                >
-                    <Text size={14} weight={400} color={colors.secundary}>
-                        {!bodyIsHidden ? "Show less" : "Read more"}
-                    </Text>
-                </Button>
+                <CenterButton>
+                    <Button
+                        $borderColor={color}
+                        $backgroundColor={color}
+                        $height={24}
+                        $width={200}
+                        onClick={() => setBodyIsHidden(!bodyIsHidden)}
+                    >
+                        <Text size={14} weight={400} color={colors.secundary}>
+                            {!bodyIsHidden ? "Show less" : "Read more"}
+                        </Text>
+                    </Button>
+                </CenterButton>
             </TextBody>
         </Wrapper>
     );
@@ -64,6 +66,12 @@ const TextBody = styled.div`
     display: flex;
     flex-flow: column;
     width: 100%;
+`;
+
+const CenterButton = styled.div`
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
 `;
 
 const TextBodyHeader = styled.div`
