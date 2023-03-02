@@ -1,5 +1,7 @@
 import styled from "styled-components";
+import { SvgCopy } from "../../Svg";
 import colors from "../../utils/colors";
+import Button from "../Button";
 import Text from "../Text";
 
 export default function EmailCopy({ email }) {
@@ -11,7 +13,13 @@ export default function EmailCopy({ email }) {
                         {email}
                     </Text>
                 </EmailField>
-                <CopyButton $color={colors.primary}></CopyButton>
+                <Button $backgroundColor={colors.primary} $borderColor={colors.primary} $height={80} $width={80}>
+                    <SvgCopy
+                        background={colors.primary}
+                        fill={colors.white}
+                        fill2={colors.white}
+                    />
+                </Button>
             </Wrapper>
         </Container>
     );
@@ -20,7 +28,7 @@ export default function EmailCopy({ email }) {
 const Container = styled.div`
     height: 80px;
     width: 100%;
-    border: 4px solid ${({ $border }) => $border};
+    border: 2px solid ${({ $border }) => $border};
     border-radius: 20px;
 `;
 
@@ -34,11 +42,4 @@ const EmailField = styled.div`
     flex-grow: 1;
     justify-content: center;
     align-items: center;
-`;
-
-const CopyButton = styled.a`
-    height: 80px;
-    width: 80px;
-    background: ${({ $color }) => $color};
-    border-radius: 10px;
 `;
