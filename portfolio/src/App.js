@@ -38,6 +38,10 @@ const Row = styled.div`
     display: flex;
     flex-flow: row;
     justify-content: space-between;
+
+    @media (max-width: 1366px) {
+        flex-flow: column;
+    }
 `;
 
 export default App;
