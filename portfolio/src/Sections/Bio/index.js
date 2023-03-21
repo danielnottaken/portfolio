@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { EmailCopy, Loading, Margin, Text } from "../../Components";
+import { EmailCopy, Margin, Text } from "../../Components";
 import { SvgGitHub, SvgLinkedIn, SvgMail } from "../../Svg";
 import colors from "../../utils/colors";
 
