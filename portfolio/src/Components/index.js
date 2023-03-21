@@ -7,6 +7,7 @@ import Margin from "./Margin";
 import SectionItem from "./SectionItem";
 import SectionTitle from "./SectionTitle";
 import Text from "./Text";
+import Loading from "./Loading";
 
 export {
     Badge,
@@ -18,4 +19,5 @@ export {
     SectionItem,
     SectionTitle,
     Text,
+    Loading
 };

@@ -1,6 +1,5 @@
-import { useEffect, useState } from "react";
 import styled from "styled-components";
-import { EmailCopy, Margin, SectionTitle, Text } from "../../Components";
+import { EmailCopy, Loading, Margin, Text } from "../../Components";
 import { SvgGitHub, SvgLinkedIn, SvgMail } from "../../Svg";
 import colors from "../../utils/colors";
 
